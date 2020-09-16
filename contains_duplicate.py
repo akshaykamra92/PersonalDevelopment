@@ -1,5 +1,5 @@
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums) -> bool:
         nums.sort()
         for i in range(len(nums)-1):
             if (nums[i] == nums[i + 1]) :
@@ -7,3 +7,6 @@ class Solution:
             else:
                 pass
         return 0
+nums = [1,2,3,1]
+print(containsDuplicate(nums))
+
