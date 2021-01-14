@@ -55,8 +55,26 @@ def replaceNone(test):
         return final
 
 
-test = [None,1]
-print(replaceNone(test))
+# s = input('Number if instances ')
+# ll = []
+# for i in range(int(s)):
+#     a = input('Enter sent ')
+#     ll.append(str(a))
+# # print(ll)
+# dic = {}
+# for i in ll:
+#     if i in dic:
+#         dic[i] += 1
+#     else:
+#         dic[i] = 1
+#
+# print(len(dic.keys()))
+# for i in list(dic.values()):
+#     print(i, end=' ')
+
+s= input('Enter string ')
+test = s.split('\n')
+print(test)
 
 
 
