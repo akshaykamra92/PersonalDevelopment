@@ -1,0 +1,467 @@
+Index: MaxNeigbors of Node.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- MaxNeigbors of Node.py	(revision 9145664adbab02bf9c19e402cd47827ed72b29bc)
++++ MaxNeigbors of Node.py	(date 1610740455357)
+@@ -39,5 +39,24 @@
+ 
+ neigh = [['A'], ['A', 'B'], ['A', 'C'], ['B', 'D', 'C'], ['C', 'B']]
+ 
+-print(neighborsCount(neigh))
++# print(neighborsCount(neigh))
++def friends(inp):
++    frdlist = {}
++    for friends in inp:
++        if len(friends) > 1:
++            for fr in friends:
++                if fr in frdlist:
++                    frdlist[fr] += len(friends)-1
++                else:
++                    frdlist[fr] = len(friends)-1
++    nodes = list(frdlist.keys())
++    num = list(frdlist.values())
++    for i, x in enumerate(num):
++        if x == max(num):
++            print(nodes[i])
++    print(frdlist)
++    # print(i for i, x in enumerate(nodes) if x == max(num))
++
++
++friends(neigh)
+ 
+Index: SpellChecker.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- SpellChecker.py	(revision 9145664adbab02bf9c19e402cd47827ed72b29bc)
++++ SpellChecker.py	(date 1610737066526)
+@@ -1,30 +1,29 @@
+ input_list = ['cat', 'bat', 'rat', 'drat', 'dart', 'drab', 'monalisa']
+-word = '*'
++word = '..t'
+ filteredList = []
+-# if word in input_list:
+-#     print(True)
+-# elif word is None:
+-#     print(False)
+-# elif len(word) == 0:
+-#     print(False)
+-# else:
+-#     for ip in input_list:
+-#         if len(word) == len(ip):
+-#             for i in range(len(word)):
+-#                 # print(i)
+-#                 if word[i] == ip[i] or word[i] == '.':
+-#                     # print(word[i], ip[i])
+-#                     if i == len(word)-1:
+-#                         filteredList.append(ip)
+-#                     continue
+-#                 else:
+-#                     break
+-#
+-# print(filteredList)
+-# # wd = j= 0
+-# # for i in range(len(filteredList)):
+-# #     if word[j] == filteredList[i][j] or word[j] == '.':
+-# #         j += 1
+-if len(word) == 1 and word == '*':
+-    print(input_list)
++if word in input_list:
++    print(True)
++elif word is None:
++    print(False)
++elif len(word) == 0:
++    print(False)
+ else:
++    for ip in input_list:
++        if len(word) == len(ip):
++            for i in range(len(word)):
++                # print(i)
++                if word[i] == ip[i] or word[i] == '.':
++                    # print(word[i], ip[i])
++                    if i == len(word)-1:
++                        filteredList.append(ip)
++                    continue
++                else:
++                    break
++
++print(filteredList)
++# wd = j= 0
++# for i in range(len(filteredList)):
++#     if word[j] == filteredList[i][j] or word[j] == '.':
++#         j += 1
++# if len(word) == 1 and word == '*':
++#     print(input_list)
+\ No newline at end of file
+Index: ConsecutiveSum.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ConsecutiveSum.py	(revision 9145664adbab02bf9c19e402cd47827ed72b29bc)
++++ ConsecutiveSum.py	(date 1610743727810)
+@@ -1,8 +1,11 @@
+-stat = 'The Sky is Blue'
+-test = stat.split()
+-rev = list(reversed(test))
+-final = ''
+-# for i in range(len(rev)):
+-#     final = final + rev[i] + ' '
+-# print(final)
+-print(" ".join(rev))
+\ No newline at end of file
++# stat = 'The Sky is Blue'
++# test = stat.split()
++# rev = list(reversed(test))
++# final = ''
++# # for i in range(len(rev)):
++# #     final = final + rev[i] + ' '
++# # print(final)
++# print(" ".join(rev))
++
++test = [1,2,3,4,5]
++print(test[1::2])
+\ No newline at end of file
+Index: WordCounter.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- WordCounter.py	(revision 9145664adbab02bf9c19e402cd47827ed72b29bc)
++++ WordCounter.py	(date 1610737066532)
+@@ -15,4 +15,7 @@
+     return counts
+ 
+ 
+-print(wordCounter('My Name is Akshay Kamra and I am the first of my name'))
++# print(wordCounter('My Name is Akshay Kamra and I am the first of my name'))
++
++test = 'My Name is Akshay Kamra and I am the first of my name'
++print(test.split())
+Index: LivePersonInterview.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- LivePersonInterview.py	(date 1613150697608)
++++ LivePersonInterview.py	(date 1613150697608)
+@@ -0,0 +1,2 @@
++my_set = (0,1,2).to_set()
++print(my_set)
+\ No newline at end of file
+Index: Fibonacci.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Fibonacci.py	(revision 9145664adbab02bf9c19e402cd47827ed72b29bc)
++++ Fibonacci.py	(date 1610932654802)
+@@ -1,2 +1,12 @@
+-test = '100'
+-print(isnumeric(test))
+\ No newline at end of file
++test = ['Apple', 'ple', 'something', 'thin']
++matching = []
++matcher = []
++for i in range(len(test)):
++    for val in test[i+1:]+test[:i]:
++        if val.upper() in test[i].upper():
++            matching.append(test[i])
++            matcher.append(val)
++
++print(matching)
++print(matcher)
++
+Index: ListIntersection.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ListIntersection.py	(revision 9145664adbab02bf9c19e402cd47827ed72b29bc)
++++ ListIntersection.py	(date 1610740981670)
+@@ -1,5 +1,5 @@
+-List2 = [3,1,2,1]
+-List1 = [1,1]
++List2 = {3,1,2,1}
++List1 = {1,1}
+ 
+ # final = []
+ # len1 = len(List1)
+@@ -17,13 +17,15 @@
+ #
+ # print(final)
+ 
+-listUnion = List1+List2
+-set1 = set(List1)
+-set2 = set(List2)
++# listUnion = List1+List2
++# set1 = set(List1)
++# set2 = set(List2)
+ 
+-for x in List1:
+-    listUnion.remove(x)
++# for x in List1:
++#     listUnion.remove(x)
+ # for y in set2:
+ #     listUnion.remove(y)
+-
+-print(listUnion)
+\ No newline at end of file
++#
++# print(listUnion)
++x = list1 & list2
++print(x)
+\ No newline at end of file
+Index: MultipleProblems.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- MultipleProblems.py	(revision 9145664adbab02bf9c19e402cd47827ed72b29bc)
++++ MultipleProblems.py	(date 1610736557465)
+@@ -21,22 +21,37 @@
+ 
+ 
+ def wordCounter(words):
+-    wordsl = words.split(' ')
+-    uniqueWords = set(wordsl)
+-    for i in uniqueWords:
+-        print(i + " - " + str(wordsl.count(i)))
++    from collections import Counter
++    op = Counter(words.split(' '))
++    return op.most_common()[3]
+ 
++    # wordsl = words.split(' ')
++    # uniqueWords = set(wordsl)
++    # for i in uniqueWords:
++    #     print(i + " - " + str(wordsl.count(i)))
++
++# s1 = 'My name is Akshay Akshay'
++# print(wordCounter(s1))
++string = 'Hello'
++print(string.replace('l','a'))
+ 
+ def uniquewords(words, words2):
+-    uniquelist = []
+-    jointsent = words+' '+words2
+-    wordlist = jointsent.split(' ')
+-    unique = set(wordlist)
+-    for i in unique:
+-        if jointsent.count(i) == 1:
+-            uniquelist.append(i)
+-    return uniquelist
++    set1 = set(words.split(' '))
++    set2 = set(words2.split(' '))
++    unq = set1 ^ set2
++    return list(unq)
++    # uniquelist = []
++    # jointsent = words+' '+words2
++    # wordlist = jointsent.split(' ')
++    # unique = set(wordlist)
++    # for i in unique:
++    #     if jointsent.count(i) == 1:
++    #         uniquelist.append(i)
++    # return uniquelist
+ 
++# s1 = 'My name is Akshay'
++# s2 = 'my name is Karishma'
++# print(uniquewords(s1,s2))
+ 
+ def replaceNone(test):
+     final = []
+@@ -48,11 +63,11 @@
+                 final.append(None)
+                 continue
+             if test[i] is None:
+-                test[i] = test[i-1]
+-                final.append(test[i])
++                # test[i] = test[i-1]
++                final.append(final[i-1])
+                 continue
+             final.append(test[i])
+-        return final
++        return final, test
+ 
+ 
+ # s = input('Number if instances ')
+@@ -71,14 +86,16 @@
+ # print(len(dic.keys()))
+ # for i in list(dic.values()):
+ #     print(i, end=' ')
+-
+-s= input('Enter string ')
+-test = s.split('\n')
+-print(test)
+-
+-
+-
+-
+-
+-
+-
++# import numpy
++# inp = [1,2,3,4]
++# final = []
++# for i in range(len(inp)):
++#     ll = [inp[:i] + inp[i+1:]]
++#     final.append(numpy.prod(ll))
++# print(final)
++# a,*b, c = "foo:boo:coo:doo".split(":")
++# # print("a:", a, "b:", b, "c:",c)
++# print(a,b,c)
++#
++# test = [1,2,3,4]
++# print(test[:])
+\ No newline at end of file
+diff --git 9.png SudokuImages/9.png
+index 5211764fdf3c77c17ce833acb746eea388a3aa37..5211764fdf3c77c17ce833acb746eea388a3aa37
+GIT binary patch
+literal 676
+zc$@*G0$crwP)<h;3K|Lk000e1NJLTq001HY001Kh1^@s6@f+A@00001b5ch_0Itp)
+z=>Px#1ZP1_K>z@;j|==^1poj532;bRa{vGi!vFvd!vV){sAK>D0y#-UK~z{r?U%7@
+z6Hy$;e`i~tQ02^UI>ZbjlA$dkR%r_kcBq3;$l}zS0tJU#ibZhIrNjLJLZ>bj3dP~H
+zHPB+9F0G4&U?d`nlyit3u80vXRrvbu-V^oG%6l<rh5Ib|^4=r&$;<Ek9%q0<2Y^HJ
+z^PiK7BuPb*{LdmydjIqu*~6#k_z{B)!=R%l`l)btnO=RCOWGmoBkDBp+#NwLSt!hH
+zV!IIyy~7iC3>N<?mMy}oi<P=)iPY!E!T1Bu%~TM|F+qrmI~dQgK^K)@CzVha2|U;t
+z;$3(g^MM@unQ#?1;(0FWR^^~N$|3>Zjp!lNH-m~COHy_+Vok<DS&pfqT&x>wD<X7v
+zQ<q3BoWFEggdLB{&qP#3S>(%ZQ-t6neG;jK%rR3YpZpIpDxxgXbC{Q6gkPmMJ0f-x
+zWs!l4BQiar``+F^xA}EfCViAea@TKCkvEHom0Q#Fu*IcGFRN9VbCf$Nqbjm!m8h>e
+z$TM+7S@s(4ENx<ItA_PO7n4_qa9SQ;Vm3U@UZUAqdAoT108^u9Va7rXW_Ab@?h<PL
+z0t(+H3k%q*)%*@^k^Oi(dnN9yL}ze&L%+3lMkFl5vBYjz#mCya5zzsWIy~DFwPEqv
+z_#2mAD?ctfvc@pm&TS`YUnKNVa`NKF%{wUh?Mp;xiZrlYTgRe1feR+%e@8C{rb_rj
+zhZuDc&lYvSOl12;G0BhYi=YDrlJre4Nh*>g6-kncBsm}=MBf0!J9j$&MCQ!^0000<
+KMNUMnLSTYZb|+T=
+
+diff --git 8.png SudokuImages/8.png
+index 3ff6c4bb728129d2b4d241e44260d000bf1072df..3ff6c4bb728129d2b4d241e44260d000bf1072df
+GIT binary patch
+literal 706
+zc$@*k0zLhSP)<h;3K|Lk000e1NJLTq001EX001Tk1^@s6O5yU?00001b5ch_0Itp)
+z=>Px#1ZP1_K>z@;j|==^1poj532;bRa{vGi!vFvd!vV){sAK>D0#`{yK~z{r?UylV
+z6Hyq)zli082sOi5q3Kjh1`D@1=sCqgyHz@6F;l?p7TrY1AQ{dfQ-w@*$RLFb1#Jc~
+zP!Uwr6p8^$u?D;j*A9_rgme1)-rai*G);LgAnkBJc)Z7V2j4I6zV|(n0E14Mb7DSK
+zVhKqsA&Dg<v4ms<i9fXc@(JZ{rs>j!1SJw|T)a%Pa}Vg*r#<>B-qM1%ZFPLC6((Vj
+ziFx-mzIB2y+B?|9Y9YhoN!aBrL{W9LB>d_kOGL0r$0hQyvOw$}nnv-n2q~f=@dK4C
+zPh!DsiO>;RuEj4ySi@czf<{gJqHc%J+w|ef&oDBKv9a@FrHGJGpo8a2M)*s~%wx?L
+z;X`(@e2YCZvZ(BekRn<&5i}f_T!IZF<Dl-z$_TLKUXKd4@}CQ{pDYp~BLk=2Mzb;x
+zGijr^;b{wSG$lApgeR3Ee9YX(n~r!q0wYLp0(^Wl)0bc)X&3Q!pib1#mk2!6Si>5(
+z%V@SYP_&bM8FLBM9sLiYDe;}15R)Zy&^W9~4|RukODR&oy5^_Rl4zBqqFh)xy6-(S
+zOZ|eK)@+#?5)C*ho@7|ZWcNy*?GhK6dWiQTs)BmQ?C#UviH&lC?vx%=mM=Yz_QRMO
+z>JsA<luq$Qhq}MR$RJZ!D9vYUmac{YMZ}IMAup&@uEsWh5Wki~iVQ4P_0Fo^=?HdE
+z<)?!sn#?`LyLK;%_YSbRT0q7yka1oeD|ix`N0igU*B37C-eA4L5XUlU;@a(dSRS!$
+o$A5?=v4kX+ki-&_Gay0q534l^2>dR4c>n+a07*qoM6N<$f=0PEr2qf`
+
+diff --git 7.png SudokuImages/7.png
+index 61c2a667b37289689137390c225e604511da32c5..61c2a667b37289689137390c225e604511da32c5
+GIT binary patch
+literal 522
+zc$@(W0`>igP)<h;3K|Lk000e1NJLTq001KZ001Kh1^@s69@(>500001b5ch_0Itp)
+z=>Px#1ZP1_K>z@;j|==^1poj532;bRa{vGi!vFvd!vV){sAK>D0iQ`kK~z{r?bp9c
+z0&y6}@sBOHwA>%yl5GtRIRuqp)KUmtlZ02`=3sw-LqE3K3!GZ7?1xv7rEmp7IJHGv
+z4mz}X>)rHp!ZS2@diVX_;BYSx&j*D!-$xEjkOxy@hM%WG9OEaB@e{}R2_MtFz)B*4
+zM1aTM1Aiu<&@tU-10Q@nmZD)Z%hv&gyaRvYcs_$uXBGPgC2Y*i^8CMVT$YaTx^Ce2
+zz5tb{fed2;>r^SD-%{V<*P~b!QlXG$40sS+s2J<ykgRbb9;>1f6rIco?;9oD$xPz3
+zsjPw&-6VmQXk(mq*;|oH<+ex)QH1vy7w?TL*lGb<R^eGl93{^&NmoE>xh=G!p~zw!
+zQzyk+QN`kcfQZ)Q;^nRmS1n?DjYlFlO3uI_&0A5j+TnqiNKVFX)zNg5(DO??5fed-
+zjaI!0H&w!pTuTHo_7jYTi&Qa>MIMQgj<KI^@Q4(OdD#>Xe|H4+sFnjEeMVnAks)_7
+z{U)y8fb{Mb7I-9uqlENoIq$d7GM)eMKvMko)=wPcCywzG$BYL20f1Ha%vA{7!T<mO
+M07*qoM6N<$f+y_aMgRZ+
+
+diff --git 6.png SudokuImages/6.png
+index 3af30e08d2d9d25329fa227c4e45a6e82c93e0eb..3af30e08d2d9d25329fa227c4e45a6e82c93e0eb
+GIT binary patch
+literal 673
+zc$@*D0$%-zP)<h;3K|Lk000e1NJLTq001HY001Qj1^@s6Cqg@V00001b5ch_0Itp)
+z=>Px#1ZP1_K>z@;j|==^1poj532;bRa{vGi!vFvd!vV){sAK>D0yarRK~z{r?Uz4j
+z6Hy$;Uo_<*S1C7~Lqkz;$WY{z25BorD%e3m5ehEJR1iCKaqN<*!#QNS!Kn^)Q92ae
+z3PPcfOdSp*K|wU!ayXobDIQe#`rhj=LeGEiT~jP_A9&=;`yH1LFYkWuQh<OR15VKA
+zKPMMSlZ&LuMbi8~BD)`2>~Z}zn>u%f4HpWmP`Jn*zNVrHva@EQw*&uX30&NQk4&KI
+zJwvn8#m64i4ap?Z+wn2yFmW_kn67UjOsH@Oj76gDWmLG7a8O$hF#rdJkw_AFB*9Vf
+zf`Lg$3`E*!RJc5;!Dk=g9nB63ZINj0mfDz%*;w2h<XY^bDbj}LN(nK}*U<{M;NQE3
+zamU)9vm8uTeQZZ`c?R@E+8$iB8e%vlOw2sMYO{lGw}a;DeO$2mwL4gQn{BnUL}Kx?
+zs4o&@{z?4PCQX8sAELa{5bI}-mPp%kNn{)=0Zkqt!RDe(*VtHkNz(>swfL{QJxWDZ
+zJW25YoL!%<GF#<OtQEXb$pkHtQ`Ru0KXB<Xo1wV3_l=T1S|X#PXDP+(^B0O~?9*(7
+z;?Pi$l0I4@_SG9~R;5rZd#KXy8Dn!(Wy%K7Uik|#HfppPulT?2s;y;=$-3(u-BY88
+zHc(S1u8q6v>CP1iQAgBV@l+jQAL)|>4NS}C#miWF{vPtxBZ*((=|UNtm#}b%)7VHv
+zlF0U6orKfxrmDSrc+tuDMnvTQebeM3X>yS?xk#F0BEr~riYVB?d%1L`00000NkvXX
+Hu0mjf<_IoZ
+
+diff --git 3.png SudokuImages/3.png
+index e36509a2ad42a034632bea9a719188e7bdc22924..e36509a2ad42a034632bea9a719188e7bdc22924
+GIT binary patch
+literal 623
+zc$@)m0+9WQP)<h;3K|Lk000e1NJLTq001EX001Kh1^@s68Z2XE00001b5ch_0Itp)
+z=>Px#1ZP1_K>z@;j|==^1poj532;bRa{vGi!vFvd!vV){sAK>D0t87!K~z{r?Uz4D
+z8&Mp`f9G<A6HLUXrAceR!J$Y|q(s3&DV0v4g5Z(^AyDGrVx1gxc5w@2I)@BhG6bwc
+zg$|_<i$g#ZT8a{4I>Z(dkPIgjzP-D=^A9M#cR7fK`@rLl-#xew@BQxkI0Y8eVY>LW
+zqXZHzfrQKdDsf7s%>|l>hUkH!kfL-`|AbDNFTd!V&ydE>32|yD=*-TQ8wP`3sPTDn
+zNJ$)SjH73A8CwT+n0BH08zo~75tWOmGx$(<rb;0$QOhBf%A@MM{W`T=0;;nbDpK3L
+zD1o>{vyAd>t6k3_;Yd8j$}X=-Al{f-jA8@){x;ZKdNs=LW#BSx(b^7XZH0%1uxMMt
+z+|Oc~F-&LoTg~bLk70FAjpJR~eE))mo~LQ&td~N68}!F(P;eP34%eUYY`8wu@fCda
+z5EX4~hl%=85ysNgWlmTltQR2L8NM{8S<ORduE<MdPxu2te37s*cNP$KB*Iwy%!`8f
+zc8aR6XDMk}5Iv%YeNIUjACK|@iaxO}>KHv8ZdF9_Poi-^-+ox3`EH)xSO<v|d|U3s
+ztnR_cWbkpXdP69+j(9bahL_M3miUy`E<QtTB#HH{5-ODnz84KF#Tm58HBT8~Bfb(p
+z^GL@d=(&;!8XH7Bu?nMDMw8F;LhuLX5=giN5-x#+%RP`F`Ue^<I8nG%vU30c002ov
+JPDHLkV1l7$45<JB
+
+diff --git 2.png SudokuImages/2.png
+index 981f930e4c4fbce9d4bdc2d99790ddc41ffca8b0..981f930e4c4fbce9d4bdc2d99790ddc41ffca8b0
+GIT binary patch
+literal 562
+zc$@(;0?qx2P)<h;3K|Lk000e1NJLTq001HY001Hg1^@s6I!6n_00001b5ch_0Itp)
+z=>Px#1ZP1_K>z@;j|==^1poj532;bRa{vGi!vFvd!vV){sAK>D0mn&1K~z{r?Uyk~
+z!$1^<UsTBAk|BbKZlYkN2*pK;NVSVo7q={mLy!*Yq>EF*E)JrSMI0Q|QlTI&h0fxj
+z5O64hLu!S(IH|<xH%SkPK}s$OsE`jHcX_$t<6iEO6JSAqfG#%vI<bhCSj5Xe7I~{v
+zX+1-UzFrap!HQn$OJr!hRHrw#BoKBV@r!wXjGRn%-}y1*tOng=i#g#Cxx-FMggB7K
+z+I|hUh5^I4#YJ%eBce+tUqcWV-y&vJg`6tj=9MK}n0gVZFPRx=4fcWq-y&CA3bY6I
+z@B<HfQ%pp}(j`lB!1axEL@!{>5s_e3hnwh*Z+8#%IFmF@PB;@Tq7!*;Qo|Y~Ws&Bk
+zc8UwOGoiWK9JI=kMDdO#IEhB&<peqF)FcafprdOOfryD(UWS+|25x3Hp+#C11+uK5
+z(qf5#gc5NY*?@xbV~DL_1Q%&lpp0jsg{g;&U?P^p((p8PB9gG-7x5v{Dy!J2@=0=C
+zCqA0zv@*L*{kvzhJlgJ~-*|tb>(c_Q9t_dZ;{nZyEbj+L#|NgaA=}|!#2u1a<?bi`
+zL>h<4y8byjhXj?gEH?2?&r2-gB^L1#i+qRZ6LsWi{A%2BBLDyZ07*qoM6N<$f)c9j
+A2mk;8
+
+diff --git 1.png SudokuImages/1.png
+index 643ce3acc5d2c175b7a6c3c4b219c930a105c3b4..643ce3acc5d2c175b7a6c3c4b219c930a105c3b4
+GIT binary patch
+literal 310
+zc%17D@N?(olHy`uVBq!ia0vp^Dj>|k1|%Oc%$NbB7>k44ofy`glX(f`u%tWsIx;Y9
+z?C1WI$O`0h7I;J!GcfQS24TkI`72U@f~P%Q977`9lmGCu@HBH6IKFgbc9V7C=&|Y$
+zkSG;UG_aBV^7WWl+qwu_ws|{x0|dDkRxDBD|MTPjk1KoryKcMm|7PQ{hMuI3y9`s6
+z<tNBHrI#7J`Imfhg8k~riVgx=ZoCYo60Ql(ZxT2Zr5Xd-1(_D}DY2l~a7OmaYyQLj
+z8k1uj7B<%z?b*M(EAcI#M)`H6HrMcb!Ot`@*7{rRxb!n#{+hwz1Hb-TuXngQk;Cox
+lx0VAdnmM3m9^#jfU?_-Mx``uSe+AH644$rjF6*2UngDqAY{&or
+
+diff --git 5.png SudokuImages/5.png
+index 9c0d00cd4a0993705972127ee4849c4f1ae3fc2d..9c0d00cd4a0993705972127ee4849c4f1ae3fc2d
+GIT binary patch
+literal 557
+zc$@((0@D47P)<h;3K|Lk000e1NJLTq001KZ001Be1^@s6m`%a=00001b5ch_0Itp)
+z=>Px#1ZP1_K>z@;j|==^1poj532;bRa{vGi!vFvd!vV){sAK>D0m4Z{K~z{r?U%7j
+z!$1^=FD?-(gbr0o5W(6hM!~5d3OYC_hUy%rP;u#hAg!Yv#H9rnyEv$%LqXi^Brakd
+zwBjJ>kfl?*bm;aoY0pZlf#i}xhkS6!<#NNvyO;L}2NN<PjM4i@5XjgO$k-9c*x^~G
+zd9_Q%IgW7ujJcyK-Q^Ig=&|#JY>Ze%^Y7plT-50{hj^;MR#c+LQF3;;MkeT5kI6-{
+zy&5MxeRM=ei3uwzVeFL~^w~SiGL6d}@Ug6^<R6SOKe@s~5GAbd=Wz4dK%2g0g-NCp
+zmBEBHM@T-v^?Qr%au1Wt=YtNtkU=V?AR!9<V!Q~gWH3d^LjwQO`np42l@aPmMWEff
+zPi$Xgy0l@GG>AMEVn}WuWxCWa6nbo7q$_mMA-?yfDfN_`EL*cCseKroHKz=rQO=T;
+zO^MFkF_f;oAT62KFqw}}cNZKo6q%Q|XY+$nNwRZXE}*&NAMFa#5gv-$mTlr*rgn~`
+zG=qd%M0K#(wyMZ)h!C|h+^aCi^tFPJ3?);5uIngd6v%>zt$Y=%4T0g9>bTD(5f^w`
+vZLMaRFr|ukG`zLS;P=*!K*o*{k|E?9Y`UDt;6bd^00000NkvXXu0mjfS3dcO
+
+diff --git 4.png SudokuImages/4.png
+index 16a0a559c86d73eccb3b266f9e72527f9d3f251d..16a0a559c86d73eccb3b266f9e72527f9d3f251d
+GIT binary patch
+literal 425
+zc%17D@N?(olHy`uVBq!ia0vp^%0R5d!3HF+wkG@mQjEnx?oJHr&dIz4a#+$GeH|GX
+zHuiJ>Nn{1`ISV`@iy0XB4ude`@%$AjKn-@DE{-7)?#X}nS$LXR3>;rNGP=n&bN5)W
+ziAx;o`&rq!@br}C#)%gj7QWUB>0xnjJ^m-f;-birfVyYuQ~a$K%u0^S^GW@Xy_@^#
+zMD`VrXH1ut^a?IFs5r9Ane_y7NWmG~wwV(j@=WLYW^jg2ths9<yGF?w|2FT~hdf8;
+z&z2AqeQmhG+4Ur=h~=~AOXJ#hSZTINMxT=SqEX5zFyZ}-@3$p3#i|*+SUcyafHI%x
+zVu1-SXH4gj{wyqE=DH?f##?{Y=?sjKeU&>^dKG_FaUPzRr`~m$(@5c_p}l^o;g1xX
+z<cv6nxg||J9>qKxcFdn~=kS6(1>DXH%|d!+F<g10B9+s@Y8vQyc%$@!S)9zDiiLF<
+zt^{6T{4nA2|NE7!T5e1dA&SPYBw`W*EYr5QcS6FYlt<6tmBgEdMn;CTG#%H+Cw0F7
+PgO|b6)z4*}Q$iB}ai5;=
+

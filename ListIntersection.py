@@ -1,5 +1,5 @@
-List2 = [3,1,2,1]
-List1 = [1,1]
+List2 = {3,1,2,1}
+List1 = {1,1}
 
 # final = []
 # len1 = len(List1)
@@ -17,13 +17,15 @@ List1 = [1,1]
 #
 # print(final)
 
-listUnion = List1+List2
-set1 = set(List1)
-set2 = set(List2)
+# listUnion = List1+List2
+# set1 = set(List1)
+# set2 = set(List2)
 
-for x in List1:
-    listUnion.remove(x)
+# for x in List1:
+#     listUnion.remove(x)
 # for y in set2:
 #     listUnion.remove(y)
-
-print(listUnion)
+#
+# print(listUnion)
+x = list1 & list2
+print(x)

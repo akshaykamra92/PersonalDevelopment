@@ -21,22 +21,37 @@ def avgLen(sent):
 
 
 def wordCounter(words):
-    wordsl = words.split(' ')
-    uniqueWords = set(wordsl)
-    for i in uniqueWords:
-        print(i + " - " + str(wordsl.count(i)))
+    from collections import Counter
+    op = Counter(words.split(' '))
+    return op.most_common()[3]
 
+    # wordsl = words.split(' ')
+    # uniqueWords = set(wordsl)
+    # for i in uniqueWords:
+    #     print(i + " - " + str(wordsl.count(i)))
+
+# s1 = 'My name is Akshay Akshay'
+# print(wordCounter(s1))
+string = 'Hello'
+print(string.replace('l','a'))
 
 def uniquewords(words, words2):
-    uniquelist = []
-    jointsent = words+' '+words2
-    wordlist = jointsent.split(' ')
-    unique = set(wordlist)
-    for i in unique:
-        if jointsent.count(i) == 1:
-            uniquelist.append(i)
-    return uniquelist
+    set1 = set(words.split(' '))
+    set2 = set(words2.split(' '))
+    unq = set1 ^ set2
+    return list(unq)
+    # uniquelist = []
+    # jointsent = words+' '+words2
+    # wordlist = jointsent.split(' ')
+    # unique = set(wordlist)
+    # for i in unique:
+    #     if jointsent.count(i) == 1:
+    #         uniquelist.append(i)
+    # return uniquelist
 
+# s1 = 'My name is Akshay'
+# s2 = 'my name is Karishma'
+# print(uniquewords(s1,s2))
 
 def replaceNone(test):
     final = []
@@ -48,11 +63,11 @@ def replaceNone(test):
                 final.append(None)
                 continue
             if test[i] is None:
-                test[i] = test[i-1]
-                final.append(test[i])
+                # test[i] = test[i-1]
+                final.append(final[i-1])
                 continue
             final.append(test[i])
-        return final
+        return final, test
 
 
 # s = input('Number if instances ')
@@ -71,14 +86,16 @@ def replaceNone(test):
 # print(len(dic.keys()))
 # for i in list(dic.values()):
 #     print(i, end=' ')
-
-s= input('Enter string ')
-test = s.split('\n')
-print(test)
-
-
-
-
-
-
-
+# import numpy
+# inp = [1,2,3,4]
+# final = []
+# for i in range(len(inp)):
+#     ll = [inp[:i] + inp[i+1:]]
+#     final.append(numpy.prod(ll))
+# print(final)
+# a,*b, c = "foo:boo:coo:doo".split(":")
+# # print("a:", a, "b:", b, "c:",c)
+# print(a,b,c)
+#
+# test = [1,2,3,4]
+# print(test[:])

@@ -15,4 +15,7 @@ def wordCounter(string):
     return counts
 
 
-print(wordCounter('My Name is Akshay Kamra and I am the first of my name'))
+# print(wordCounter('My Name is Akshay Kamra and I am the first of my name'))
+
+test = 'My Name is Akshay Kamra and I am the first of my name'
+print(test.split())

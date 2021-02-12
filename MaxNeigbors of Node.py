@@ -39,5 +39,24 @@ def neighborsCount(neigh):
 
 neigh = [['A'], ['A', 'B'], ['A', 'C'], ['B', 'D', 'C'], ['C', 'B']]
 
-print(neighborsCount(neigh))
+# print(neighborsCount(neigh))
+def friends(inp):
+    frdlist = {}
+    for friends in inp:
+        if len(friends) > 1:
+            for fr in friends:
+                if fr in frdlist:
+                    frdlist[fr] += len(friends)-1
+                else:
+                    frdlist[fr] = len(friends)-1
+    nodes = list(frdlist.keys())
+    num = list(frdlist.values())
+    for i, x in enumerate(num):
+        if x == max(num):
+            print(nodes[i])
+    print(frdlist)
+    # print(i for i, x in enumerate(nodes) if x == max(num))
+
+
+friends(neigh)
 
