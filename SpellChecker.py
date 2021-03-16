@@ -27,4 +27,4 @@ filteredList = []
 # #         j += 1
 if len(word) == 1 and word == '*':
     print(input_list)
-else:
+# else:

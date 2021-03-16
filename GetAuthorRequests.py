@@ -8,20 +8,22 @@ def urlfetch(author):
     titles = []
     while results > 0:
         titledata = requests.get(url+'?author='+str(author)+'&page='+str(page)).json()
-        # print(timedata)
-        # print(timedata)
         if len(titledata["data"]) == 0:
             break
         else:
             page += 1
             results = len(titledata["data"])
-            # data.append(timedata["data"])
             for i in titledata["data"]:
-                # print(i)
                 if i["title"] is not None:
-                    titles.append(i["title"])
+                    if i["title"] in titles:
+                        continue
+                    else:
+                        titles.append(i["title"])
                 elif i["title"] is None and i["story_title"] is not None:
-                    titles.append(i["story_title"])
+                    if i["story_title"] in titles:
+                        continue
+                    else:
+                        titles.append(i["story_title"])
                 elif i["title"] is None and i["story_title"] is None:
                     continue
 

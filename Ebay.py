@@ -5,7 +5,7 @@ x = val.split(',')
 final = {}
 for inp in x:
     keyval = inp.split(':')
-    # print(keyval)
+    print(keyval)
     if keyval[1] in final:
         if type(final[keyval[1]]) == list:
             final[keyval[1]].append(keyval[0])
@@ -19,5 +19,4 @@ for inp in x:
     else:
         final[keyval[1]] = keyval[0]
 
-op = reversed(list(final.items()))
-print(op)
+print(final)
