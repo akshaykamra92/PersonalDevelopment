@@ -7,6 +7,7 @@ from itertools import combinations
 
 
 out = list(combinations(lsts, 2))
+print(out)
 output = False
 for item in out:
     if item[0] + item[1] in test:
