@@ -1,0 +1,5 @@
+<application>
+  <component name="PathMacrosImpl">
+    <macro name="Python3" value="/Library/Frameworks/Python.framework/Versions/3.9/bin/python3.9" />
+  </component>
+</application>
