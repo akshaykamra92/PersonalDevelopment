@@ -1,0 +1,90 @@
+[
+   {
+      "table": "place_nm",
+      "inserts": [
+            {
+                  "fields": [
+                     "lu_stat_id",
+                      "lu_use_desig_id",
+                       "place_nm"
+                   ],
+                    "values": [
+                        1,
+                        1,
+                        "National Monument"
+                    ]
+            },
+            {
+                    "fields": [
+                       "lu_stat_id",
+                        "lu_use_desig_id",
+                        "place_nm"
+                     ],
+                     "values": [
+                        2,
+                        1,
+                        "Dulles Airport"
+                     ]
+              }
+        ]
+   },
+   {
+      "table": "place",
+      "inserts": [
+            {
+                   "fields": [
+                     "lu_stat_id",
+                     "lu_use_desig_id"
+                     ],
+                    "values": [
+                       1,
+                       1
+                     ]
+              }
+        ]
+   },
+   {
+      "table": "place_geom_p",
+      "inserts": [
+            {
+                   "fields": [
+                     "latitude",
+                     "longitude"
+                    ],
+                   "values": [
+                      5.55555,
+                      55.55555
+                    ]
+            },
+            {
+                    "fields": [
+                       "latitude",
+                       "longitude"
+                     ],
+                     "values": [
+                       4.444444,
+                       44.44444
+                     ]
+              }
+        ]
+   },
+   {
+     "table": "place_type",
+     "inserts": [
+           {
+                     "fields": [
+                       "lu_stat_id",
+                       "lu_hg_place_type_id",
+                       "lu_use_desig_id",
+                       "lu_use_rank_num"
+                     ],
+                     "values": [
+                       1,
+                       1,
+                       1,
+                       1
+                     ]
+              }
+        ]
+   }
+]
